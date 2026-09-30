@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ChessBot Arena</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="app">
+    <header>
+      <div>
+        <h1>♟ ChessBot Arena</h1>
+        <p>Play chess against an AI chatbot opponent</p>
+      </div>
+      <div class="controls">
+        <label>
+          Difficulty
+          <select id="difficulty">
+            <option value="easy">Easy</option>
+            <option value="medium" selected>Medium</option>
+            <option value="hard">Hard</option>
+          </select>
+        </label>
+        <label>
+          Time
+          <select id="timeControl">
+            <option value="60">1 min</option>
+            <option value="180" selected>3 min</option>
+            <option value="300">5 min</option>
+            <option value="600">10 min</option>
+            <option value="900">15 min</option>
+          </select>
+        </label>
+        <button id="newGame">New Game</button>
+      </div>
+    </header>
+
+    <main>
+      <section class="game-card">
+        <div class="playerbar">
+          <div><strong>🤖 ChessBot</strong><span id="botLevel">Medium</span></div>
+          <div id="turnText">Your turn</div>
+          <div><strong>👤 You</strong><span>White</span></div>
+        </div>
+
+        <div id="board" class="board" aria-label="Chess board"></div>
+
+        <div class="clocks">
+          <div class="clock" id="botClock"><span>🤖 Bot</span><strong id="botTime">03:00</strong></div>
+          <div class="clock active" id="youClock"><span>👤 You</span><strong id="youTime">03:00</strong></div>
+        </div>
+        <div class="status-row">
+          <div id="status">Your turn — make a move.</div>
+          <button id="undo">Undo</button>
+        </div>
+      </section>
+
+      <aside class="side-card">
+        <h2>Chatbot</h2>
+        <div id="chat" class="chat">
+          <div class="msg bot">Hello! I am ChessBot. Choose a level and try to beat me.</div>
+        </div>
+        <div class="legend">
+          <h3>Levels</h3>
+          <p><b>Easy:</b> mostly random legal moves with basic captures.</p>
+          <p><b>Medium:</b> searches several moves ahead and values captures/position.</p>
+          <p><b>Hard:</b> deeper minimax search with alpha-beta pruning.</p>
+        </div>
+      </aside>
+    </main>
+
+    <footer>
+      HTML + CSS + JavaScript • No backend required
+    </footer>
+  </div>
+  <script src="script.js"></script>
+</body>
+</html>
